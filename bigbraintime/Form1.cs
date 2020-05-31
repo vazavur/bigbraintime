@@ -43,14 +43,22 @@ namespace bigbraintime
 
         private void button_fromfile_Click(object sender, EventArgs e)
         {
-            StreamReader str = new StreamReader(@"D:\file.txt"); //возьмем массив из файла, считывает первые 32 элемента
-            string[] a = str.ReadToEnd().Split(';');
-            for (int i = 0; i < arr.Length; i++)
+            try
             {
-                dataGridView1.Rows[0].Cells[i].Value = a[i];
-                arr[i] = Convert.ToInt32(a[i]);
+                StreamReader str = new StreamReader(@"D:\file.txt"); //возьмем массив из файла, считывает первые 32 элемента
+                string[] a = str.ReadToEnd().Split(';');
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    dataGridView1.Rows[0].Cells[i].Value = Convert.ToInt32(a[i]);
+                    arr[i] = Convert.ToInt32(a[i]);
+                }
+                str.Close();
+            } catch
+            {
+                MessageBox.Show(
+                    "Вероятно, файл имеет неверный формат данных.",
+                    "Внимание");
             }
-            str.Close();
         }
 
         private void button_tofile_Click(object sender, EventArgs e)
@@ -81,9 +89,10 @@ namespace bigbraintime
             chart.Series[0].Points.DataBindXY(x, y);
         }
 
-        private void button_changeform_Click(object sender, EventArgs e)
+        private void button_changeform_Click(object sender, EventArgs e) //переход на вторую форму
         {
-
+            Form2 secondform = new Form2();
+            secondform.Show();
         }
     }
 }
