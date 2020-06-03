@@ -69,7 +69,7 @@ namespace bigbraintime
             StreamWriter str = new StreamWriter(@"D:\outputfile.txt"); //отправим массив, содержащийся в ячейках, в файл
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = Convert.ToInt32(dataGridView1.Rows[0].Cells[i].Value);
+                arr[i] = Convert.ToInt32(dataGridView1.Rows[2].Cells[i].Value);
                 str.Write(Convert.ToString(arr[i]) + ";");
             }
             str.Close();
