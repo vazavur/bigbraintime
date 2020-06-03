@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_fromfile = new System.Windows.Forms.Button();
             this.button_tofile = new System.Windows.Forms.Button();
@@ -38,6 +38,7 @@
             this.button_creategyst = new System.Windows.Forms.Button();
             this.button_changeform = new System.Windows.Forms.Button();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button_objective = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.ErrorText = "RWERR";
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.Size = new System.Drawing.Size(686, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(685, 328);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -60,7 +61,7 @@
             // 
             this.button_fromfile.Location = new System.Drawing.Point(12, 346);
             this.button_fromfile.Name = "button_fromfile";
-            this.button_fromfile.Size = new System.Drawing.Size(115, 23);
+            this.button_fromfile.Size = new System.Drawing.Size(99, 23);
             this.button_fromfile.TabIndex = 1;
             this.button_fromfile.Text = "ИЗ ФАЙЛА";
             this.button_fromfile.UseVisualStyleBackColor = true;
@@ -78,9 +79,9 @@
             // 
             // randomizer
             // 
-            this.randomizer.Location = new System.Drawing.Point(154, 346);
+            this.randomizer.Location = new System.Drawing.Point(117, 346);
             this.randomizer.Name = "randomizer";
-            this.randomizer.Size = new System.Drawing.Size(115, 23);
+            this.randomizer.Size = new System.Drawing.Size(104, 23);
             this.randomizer.TabIndex = 1;
             this.randomizer.Text = "РАНДОМАЙЗЕР";
             this.randomizer.UseVisualStyleBackColor = true;
@@ -88,7 +89,7 @@
             // 
             // button_creategyst
             // 
-            this.button_creategyst.Location = new System.Drawing.Point(295, 346);
+            this.button_creategyst.Location = new System.Drawing.Point(340, 346);
             this.button_creategyst.Name = "button_creategyst";
             this.button_creategyst.Size = new System.Drawing.Size(115, 23);
             this.button_creategyst.TabIndex = 1;
@@ -98,7 +99,7 @@
             // 
             // button_changeform
             // 
-            this.button_changeform.Location = new System.Drawing.Point(436, 346);
+            this.button_changeform.Location = new System.Drawing.Point(461, 346);
             this.button_changeform.Name = "button_changeform";
             this.button_changeform.Size = new System.Drawing.Size(115, 23);
             this.button_changeform.TabIndex = 1;
@@ -109,28 +110,39 @@
             // chart
             // 
             this.chart.BorderlineColor = System.Drawing.Color.Black;
-            chartArea2.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart.Legends.Add(legend2);
-            this.chart.Location = new System.Drawing.Point(30, 46);
+            chartArea3.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart.Legends.Add(legend3);
+            this.chart.Location = new System.Drawing.Point(30, 98);
             this.chart.Name = "chart";
             this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Элементы";
-            this.chart.Series.Add(series2);
-            this.chart.Size = new System.Drawing.Size(650, 266);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Элементы";
+            this.chart.Series.Add(series3);
+            this.chart.Size = new System.Drawing.Size(650, 225);
             this.chart.TabIndex = 2;
             this.chart.Text = "Chart";
             this.chart.Click += new System.EventHandler(this.chart_Click);
+            // 
+            // button_objective
+            // 
+            this.button_objective.Location = new System.Drawing.Point(227, 346);
+            this.button_objective.Name = "button_objective";
+            this.button_objective.Size = new System.Drawing.Size(107, 23);
+            this.button_objective.TabIndex = 3;
+            this.button_objective.Text = "ЗАДАНИЕ";
+            this.button_objective.UseVisualStyleBackColor = true;
+            this.button_objective.Click += new System.EventHandler(this.button_objective_Click);
             // 
             // BIGBRAINTIME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(709, 376);
+            this.ClientSize = new System.Drawing.Size(709, 378);
+            this.Controls.Add(this.button_objective);
             this.Controls.Add(this.chart);
             this.Controls.Add(this.button_changeform);
             this.Controls.Add(this.button_creategyst);
@@ -157,6 +169,7 @@
         private System.Windows.Forms.Button button_creategyst;
         private System.Windows.Forms.Button button_changeform;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
+        private System.Windows.Forms.Button button_objective;
     }
 }
 

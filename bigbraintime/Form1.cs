@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace bigbraintime
@@ -17,26 +10,31 @@ namespace bigbraintime
         {
             InitializeComponent();
             dataGridView1.ColumnCount = arr.Length;
+            dataGridView1.RowCount = 3;
+            form2status = 0;
         }
 
         public int[] arr = new int[32]; //в задании указано, что массив фиксированной длинны (32)
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
+  
         private void BIGBRAINTIME_Load(object sender, EventArgs e)
         {
 
         }
 
+        private int min = 101;
+        private int max = -101;
         private void randomizer_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             for (int i = 0; i < arr.Length; i++) //заполнение массива случайными числами
             {
                 arr[i] = rnd.Next(-100, 100);
+                if (arr[i] < min) min = arr[i];
+                if (arr[i] > max) max = arr[i];
                 dataGridView1.Rows[0].Cells[i].Value = arr[i];
             }
         }
@@ -47,13 +45,18 @@ namespace bigbraintime
             {
                 StreamReader str = new StreamReader(@"D:\file.txt"); //возьмем массив из файла, считывает первые 32 элемента
                 string[] a = str.ReadToEnd().Split(';');
+                max = Convert.ToInt32(a[0]);
+                min = Convert.ToInt32(a[0]);
                 for (int i = 0; i < arr.Length; i++)
                 {
                     dataGridView1.Rows[0].Cells[i].Value = Convert.ToInt32(a[i]);
                     arr[i] = Convert.ToInt32(a[i]);
+                    if (arr[i] > max) max = arr[i];
+                    if (arr[i] < min) min = arr[i];
                 }
                 str.Close();
-            } catch
+            }
+            catch
             {
                 MessageBox.Show(
                     "Вероятно, файл имеет неверный формат данных.",
@@ -88,11 +91,29 @@ namespace bigbraintime
             }
             chart.Series[0].Points.DataBindXY(x, y);
         }
+        private byte form2status; //переключатель, будет нужен, если билд программы не будет выгружаться из памяти
+
+        public byte Form2status { get => form2status; set => form2status = value; }
 
         private void button_changeform_Click(object sender, EventArgs e) //переход на вторую форму
         {
+            Hide();
             Form2 secondform = new Form2();
             secondform.Show();
+            form2status = 1;
+        }
+
+        private void button_objective_Click(object sender, EventArgs e) //выполнение задания
+        {
+            dataGridView1.Rows[1].Cells[0].Value = min;
+            dataGridView1.Rows[1].Cells[1].Value = max;
+            int arithmean = (min + max) / 2;
+            dataGridView1.Rows[1].Cells[2].Value = arithmean;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < 0) arr[i] = arithmean;
+                dataGridView1.Rows[2].Cells[i].Value = arr[i];
+            }
         }
     }
 }
