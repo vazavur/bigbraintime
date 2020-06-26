@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_fromfile = new System.Windows.Forms.Button();
             this.button_tofile = new System.Windows.Forms.Button();
@@ -39,6 +39,8 @@
             this.button_changeform = new System.Windows.Forms.Button();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button_objective = new System.Windows.Forms.Button();
+            this.button_sortie = new System.Windows.Forms.Button();
+            this.button_cleaner = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
@@ -61,19 +63,19 @@
             // 
             this.button_fromfile.Location = new System.Drawing.Point(12, 346);
             this.button_fromfile.Name = "button_fromfile";
-            this.button_fromfile.Size = new System.Drawing.Size(99, 23);
+            this.button_fromfile.Size = new System.Drawing.Size(48, 23);
             this.button_fromfile.TabIndex = 1;
-            this.button_fromfile.Text = "ИЗ ФАЙЛА";
+            this.button_fromfile.Text = "ИЗ";
             this.button_fromfile.UseVisualStyleBackColor = true;
             this.button_fromfile.Click += new System.EventHandler(this.button_fromfile_Click);
             // 
             // button_tofile
             // 
-            this.button_tofile.Location = new System.Drawing.Point(582, 346);
+            this.button_tofile.Location = new System.Drawing.Point(66, 346);
             this.button_tofile.Name = "button_tofile";
-            this.button_tofile.Size = new System.Drawing.Size(115, 23);
+            this.button_tofile.Size = new System.Drawing.Size(45, 23);
             this.button_tofile.TabIndex = 1;
-            this.button_tofile.Text = "В ФАЙЛ";
+            this.button_tofile.Text = "В";
             this.button_tofile.UseVisualStyleBackColor = true;
             this.button_tofile.Click += new System.EventHandler(this.button_tofile_Click);
             // 
@@ -110,17 +112,17 @@
             // chart
             // 
             this.chart.BorderlineColor = System.Drawing.Color.Black;
-            chartArea3.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart.Legends.Add(legend2);
             this.chart.Location = new System.Drawing.Point(30, 98);
             this.chart.Name = "chart";
             this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Элементы";
-            this.chart.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Элементы";
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(650, 225);
             this.chart.TabIndex = 2;
             this.chart.Text = "Chart";
@@ -136,12 +138,34 @@
             this.button_objective.UseVisualStyleBackColor = true;
             this.button_objective.Click += new System.EventHandler(this.button_objective_Click);
             // 
+            // button_sortie
+            // 
+            this.button_sortie.Location = new System.Drawing.Point(582, 346);
+            this.button_sortie.Name = "button_sortie";
+            this.button_sortie.Size = new System.Drawing.Size(56, 23);
+            this.button_sortie.TabIndex = 4;
+            this.button_sortie.Text = "СОРТ";
+            this.button_sortie.UseVisualStyleBackColor = true;
+            this.button_sortie.Click += new System.EventHandler(this.button_sortie_Click);
+            // 
+            // button_cleaner
+            // 
+            this.button_cleaner.Location = new System.Drawing.Point(644, 346);
+            this.button_cleaner.Name = "button_cleaner";
+            this.button_cleaner.Size = new System.Drawing.Size(53, 23);
+            this.button_cleaner.TabIndex = 5;
+            this.button_cleaner.Text = "ЧИСТ";
+            this.button_cleaner.UseVisualStyleBackColor = true;
+            this.button_cleaner.Click += new System.EventHandler(this.button_cleaner_Click);
+            // 
             // BIGBRAINTIME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(709, 378);
+            this.Controls.Add(this.button_cleaner);
+            this.Controls.Add(this.button_sortie);
             this.Controls.Add(this.button_objective);
             this.Controls.Add(this.chart);
             this.Controls.Add(this.button_changeform);
@@ -170,6 +194,8 @@
         private System.Windows.Forms.Button button_changeform;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.Button button_objective;
+        private System.Windows.Forms.Button button_sortie;
+        private System.Windows.Forms.Button button_cleaner;
     }
 }
 

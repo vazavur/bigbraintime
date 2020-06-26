@@ -115,5 +115,37 @@ namespace bigbraintime
                 dataGridView1.Rows[2].Cells[i].Value = arr[i]; //7
             }
         }
+
+        private void button_sortie_Click(object sender, EventArgs e)
+        {
+            int temp;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                        dataGridView1.Rows[0].Cells[i].Value = Convert.ToInt32(arr[i]);
+                    }
+                }
+            }
+        }
+
+        private void button_cleaner_Click(object sender, EventArgs e)
+        {
+            min = 101;
+            max = -101;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    arr[j] = 0;
+                    dataGridView1.Rows[i].Cells[j].Value = "";
+                }
+            }
+        }
     }
 }
