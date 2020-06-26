@@ -87,5 +87,12 @@ namespace bigbraintime
                 "если строка пустая, отправляет в файл 32 нуля, разделенных точкой с запятой. В случае, если строка не полная, заполняет " +
                 "пробелы нулями.";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form ifrm = Application.OpenForms[0];
+            ifrm.Show();
+            Close();
+        }
     }
 }

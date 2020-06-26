@@ -103,16 +103,16 @@ namespace bigbraintime
             form2status = 1;
         }
 
-        private void button_objective_Click(object sender, EventArgs e) //выполнение задания
+        private void button_objective_Click(object sender, EventArgs e) //выполнение задания, R2
         {
-            dataGridView1.Rows[1].Cells[0].Value = min;
-            dataGridView1.Rows[1].Cells[1].Value = max;
-            int arithmean = (min + max) / 2;
-            dataGridView1.Rows[1].Cells[2].Value = arithmean;
-            for (int i = 0; i < arr.Length; i++)
+            dataGridView1.Rows[1].Cells[0].Value = min; //2
+            dataGridView1.Rows[1].Cells[1].Value = max; //2
+            int arithmean = (min + max) / 2; //3
+            dataGridView1.Rows[1].Cells[2].Value = arithmean; //4
+            for (int i = 0; i < arr.Length; i++) //5
             {
-                if (arr[i] < 0) arr[i] = arithmean;
-                dataGridView1.Rows[2].Cells[i].Value = arr[i];
+                if (arr[i] < 0) arr[i] = arithmean; //6
+                dataGridView1.Rows[2].Cells[i].Value = arr[i]; //7
             }
         }
     }

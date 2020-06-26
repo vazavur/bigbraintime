@@ -37,6 +37,7 @@
             this.вФайлtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.посланиеРазработчикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputtext_textBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,35 +68,35 @@
             // изФайлаToolStripMenuItem
             // 
             this.изФайлаToolStripMenuItem.Name = "изФайлаToolStripMenuItem";
-            this.изФайлаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изФайлаToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.изФайлаToolStripMenuItem.Text = "Из файла";
             this.изФайлаToolStripMenuItem.Click += new System.EventHandler(this.изФайлаToolStripMenuItem_Click);
             // 
             // рандомайзерToolStripMenuItem
             // 
             this.рандомайзерToolStripMenuItem.Name = "рандомайзерToolStripMenuItem";
-            this.рандомайзерToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.рандомайзерToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.рандомайзерToolStripMenuItem.Text = "Рандомайзер";
             this.рандомайзерToolStripMenuItem.Click += new System.EventHandler(this.рандомайзерToolStripMenuItem_Click);
             // 
             // заданиеToolStripMenuItem
             // 
             this.заданиеToolStripMenuItem.Name = "заданиеToolStripMenuItem";
-            this.заданиеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.заданиеToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.заданиеToolStripMenuItem.Text = "Задание";
             this.заданиеToolStripMenuItem.Click += new System.EventHandler(this.заданиеToolStripMenuItem_Click);
             // 
             // гистограммаtoolStripMenuItem
             // 
             this.гистограммаtoolStripMenuItem.Name = "гистограммаtoolStripMenuItem";
-            this.гистограммаtoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.гистограммаtoolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.гистограммаtoolStripMenuItem.Text = "Гистограмма";
             this.гистограммаtoolStripMenuItem.Click += new System.EventHandler(this.гистограммаtoolStripMenuItem_Click);
             // 
             // вФайлtoolStripMenuItem
             // 
             this.вФайлtoolStripMenuItem.Name = "вФайлtoolStripMenuItem";
-            this.вФайлtoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.вФайлtoolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.вФайлtoolStripMenuItem.Text = "В файл";
             this.вФайлtoolStripMenuItem.Click += new System.EventHandler(this.вФайлtoolStripMenuItem_Click);
             // 
@@ -118,11 +119,22 @@
             this.outputtext_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.outputtext_textBox.TextChanged += new System.EventHandler(this.outputtext_textBox_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(504, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "<-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 288);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.outputtext_textBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -147,5 +159,6 @@
         private System.Windows.Forms.ToolStripMenuItem вФайлtoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem посланиеРазработчикаToolStripMenuItem;
         private System.Windows.Forms.TextBox outputtext_textBox;
+        private System.Windows.Forms.Button button1;
     }
 }
